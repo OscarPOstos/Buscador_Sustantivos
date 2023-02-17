@@ -8,7 +8,7 @@ def set_style():
                     background-size: cover;
                 }
     .block-container.css-91z34k.egzxvld4 {
-                    background-color: #1111114a;
+                    background-color: #6666664a;
                     border-radius: 20px
                 }
     
