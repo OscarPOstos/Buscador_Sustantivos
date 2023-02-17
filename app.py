@@ -27,4 +27,5 @@ if uploaded_file is not None:
     st.write(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
              .lower_text()
              .normalize_text()
-             .remove_stopwords())
+             .remove_stopwords()
+             .text)
