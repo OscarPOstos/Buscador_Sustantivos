@@ -1,9 +1,14 @@
 import nltk
 from nltk.tokenize import word_tokenize
+from nltk.corpus import cess_esp
+from nltk import tag
 
 nltk.download('punkt')
+nltk.download('cess_esp')
 nltk.download('averaged_perceptron_tagger')
 
 
 def pos_tokenizer(text):
-    return nltk.pos_tag(word_tokenize(text))
+    train_sents = cess_esp.tagged_sents()
+    unigram_tagger = tag.UnigramTagger(train_sents)
+    return list(word_tokenize(text))
