@@ -17,7 +17,7 @@ if uploaded_file is not None:
     with columns[0]:
         title = st.checkbox("Titulo", value=True)
     with columns[1]:
-        new = st.checkbox("Noticia", value=True)
+        news = st.checkbox("Noticia", value=True)
     with columns[2]:
         summary = st.checkbox("Resumen", value=True)
 
@@ -27,9 +27,14 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     indexes = set_indexes(string_data.split("\r\n\r"))
-    st.write(indexes)
 
     with st.spinner('Buscando los sustantivos 😎'):
-        text = pos_tokenizer("Son 3 las muertes. conocidas en el día de hoy")
-
-        write_text(text)
+        if title:
+            text = pos_tokenizer(indexes["titulo"])
+            write_text(text)
+        if news:
+            text = pos_tokenizer(indexes["noticia"])
+            write_text(text)
+        if summary:
+            text = pos_tokenizer(indexes["resumen"])
+            write_text(text)
