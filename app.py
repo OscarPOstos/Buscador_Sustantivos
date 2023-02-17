@@ -9,11 +9,11 @@ if uploaded_file is not None:
     columns = st.columns(3)
 
     with columns[0]:
-        title = st.checkbox("Titulo")
+        title = st.checkbox("Titulo", value=True)
     with columns[1]:
-        new = st.checkbox("Noticia")
+        new = st.checkbox("Noticia", value=True)
     with columns[2]:
-        summary = st.checkbox("Resumen")
+        summary = st.checkbox("Resumen", value=True)
 
     # To convert to a string based IO:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
