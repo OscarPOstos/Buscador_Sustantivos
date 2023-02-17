@@ -12,6 +12,8 @@ st.title("Buscador de sustantivos")
 
 uploaded_file = st.file_uploader("Elige un archivo")
 if uploaded_file is not None:
+
+    words = st.text_input("Introduce las palabras que quieres buscar (deben ser sustantivos)")
     columns = st.columns(3)
 
     with columns[0]:
