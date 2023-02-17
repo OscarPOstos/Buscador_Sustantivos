@@ -27,6 +27,5 @@ if uploaded_file is not None:
 
     st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
              .lower_text()
-             .normalize_text()
              .remove_stopwords()
              .text))
