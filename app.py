@@ -25,7 +25,12 @@ if uploaded_file is not None:
     st.write(string_data)
 
     with st.spinner('Buscando los sustantivos 😎'):
-        st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
+        test = pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
                                .lower_text()
                                .remove_stopwords()
-                               .text))
+                               .text)
+        for word in test:
+            if word[1].startswith("nc"):
+                st.markdown("<b>" + word[0] + "</b>")
+            else:
+                st.markdown(word[0])
