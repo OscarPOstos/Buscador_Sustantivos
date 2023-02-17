@@ -11,4 +11,5 @@ nltk.download('averaged_perceptron_tagger')
 def pos_tokenizer(text):
     train_sents = cess_esp.tagged_sents()
     unigram_tagger = tag.UnigramTagger(train_sents)
-    return list(word_tokenize(text))
+    tokens = list(word_tokenize(text))
+    return list(unigram_tagger.tag(tokens))
