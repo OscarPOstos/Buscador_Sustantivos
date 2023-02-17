@@ -26,9 +26,14 @@ if uploaded_file is not None:
 
     with st.spinner('Buscando los sustantivos 😎'):
         test = pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
-                               .text)
+                             .text)
+        html_result = "<p>"
         for word in test:
             if word[1].startswith("nc"):
-                st.markdown("<b>" + word[0] + "</b>", unsafe_allow_html=True)
+                html_result += " <b>" + word[0] + "</b>"
+            elif word[1] == "Fp":
+                html_result += word[0]
             else:
-                st.markdown(word[0])
+                html_result += " " + word[0]
+        html_result += "</p>"
+        st.markdown(html_result, unsafe_allow_html=True)
