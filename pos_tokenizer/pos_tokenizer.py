@@ -1,6 +1,6 @@
-import ntlk
+import nltk
 from nltk.tokenize import word_tokenize
 
 
 def pos_tokenizer(text):
-    return ntlk.pos_tag(word_tokenize(text))
+    return nltk.pos_tag(word_tokenize(text))
