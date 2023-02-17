@@ -4,7 +4,7 @@ from io import StringIO
 from pos_tokenizer.pos_tokenizer import pos_tokenizer
 from style.style import set_style
 from components.write_text import write_text
-from set_indexes import set_indexes
+from set_indexes.set_indexes import set_indexes
 
 set_style()
 
