@@ -8,7 +8,6 @@ st.title("Buscador de sustantivos")
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
-
     columns = st.columns(3)
 
     with columns[0]:
@@ -26,7 +25,7 @@ if uploaded_file is not None:
     st.write(string_data)
 
     with st.spinner('Buscando los sustantivos 😎'):
-        st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
-             .lower_text()
-             .remove_stopwords()
-             .text))
+        st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
+                               .lower_text()
+                               .remove_stopwords()
+                               .text))
