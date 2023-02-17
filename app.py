@@ -26,8 +26,6 @@ if uploaded_file is not None:
 
     with st.spinner('Buscando los sustantivos 😎'):
         test = pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
-                               .lower_text()
-                               .remove_stopwords()
                                .text)
         for word in test:
             if word[1].startswith("nc"):
