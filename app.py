@@ -28,7 +28,8 @@ if uploaded_file is not None:
                          .lower_text()
                          .remove_stopwords()
                          .text)
-
+    if test is None:
+        st.write("Buscando")
     if test is not None:
         st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
                                .lower_text()
