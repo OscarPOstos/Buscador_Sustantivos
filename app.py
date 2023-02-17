@@ -24,14 +24,9 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     st.write(string_data)
-    test = pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
-                         .lower_text()
-                         .remove_stopwords()
-                         .text)
-    if test is None:
-        st.write("Buscando")
-    if test is not None:
+
+    with st.spinner('Buscando los sustantivos 😎'):
         st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
-                               .lower_text()
-                               .remove_stopwords()
-                               .text))
+             .lower_text()
+             .remove_stopwords()
+             .text))
