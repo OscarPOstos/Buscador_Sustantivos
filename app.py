@@ -1,7 +1,8 @@
 import streamlit as st
 from io import StringIO
 
-from functionalities.transform_word import PersonalizedStringClass
+from string_transformer.personalized_string_class import PersonalizedStringClass
+from pos_tokenizer.pos_tokenizer import pos_tokenizer
 
 st.title("Buscador de sustantivos")
 
@@ -24,8 +25,8 @@ if uploaded_file is not None:
     string_data = stringio.read()
     st.write(string_data)
 
-    st.write(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
+    st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
              .lower_text()
              .normalize_text()
              .remove_stopwords()
-             .text)
+             .text))
