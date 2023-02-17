@@ -29,6 +29,6 @@ if uploaded_file is not None:
                                .text)
         for word in test:
             if word[1].startswith("nc"):
-                st.markdown("<b>" + word[0] + "</b>")
+                st.markdown("<b>" + word[0] + "</b>", unsafe_allow_html=True)
             else:
                 st.markdown(word[0])
