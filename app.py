@@ -25,7 +25,7 @@ if uploaded_file is not None:
     string_data = stringio.read()
     st.write(string_data)
 
-    st.write(pos_tokenizer(PersonalizedStringClass("Vivo en una casa muy grande :)")
+    st.write(pos_tokenizer(PersonalizedStringClass("Son 3 las muertes conocidas en el día de hoy")
              .lower_text()
              .normalize_text()
              .remove_stopwords()
