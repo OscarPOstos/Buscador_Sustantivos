@@ -31,5 +31,5 @@ if uploaded_file is not None:
 
     with st.spinner('Buscando los sustantivos 😎'):
         if title:
-            text = pos_tokenizer(indexes["titulo"])
+            text = pos_tokenizer(indexes["noticia"])
             write_text(text)
