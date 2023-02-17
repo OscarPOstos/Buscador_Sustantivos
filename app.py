@@ -10,7 +10,7 @@ set_style()
 
 st.title("Buscador de sustantivos")
 
-uploaded_file = st.file_uploader("Elige un archivo")
+uploaded_file = st.file_uploader("Elige un archivo", type="txt")
 if uploaded_file is not None:
 
     words = st.text_input("Introduce las palabras que quieres buscar (deben ser sustantivos)")
