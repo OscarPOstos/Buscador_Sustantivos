@@ -10,7 +10,7 @@ set_style()
 
 st.title("Buscador de sustantivos")
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Elige un archivo")
 if uploaded_file is not None:
     columns = st.columns(3)
 
@@ -31,15 +31,12 @@ if uploaded_file is not None:
         title_text = pos_tokenizer(indexes["titulo"])
         news_text = pos_tokenizer(indexes["noticia"])
         summary_text = pos_tokenizer(indexes["resumen"])
-
-
-    with st.spinner('Buscando los sustantivos 😎'):
-        if title:
-            st.write("Titulo")
-            write_text(title_text)
-        if news:
-            st.write("Noticia")
-            write_text(news_text)
-        if summary:
-            st.write("Resumen")
-            write_text(summary_text)
+    if title:
+        st.write("Titulo")
+        write_text(title_text)
+    if news:
+        st.write("Noticia")
+        write_text(news_text)
+    if summary:
+        st.write("Resumen")
+        write_text(summary_text)
