@@ -1,8 +1,12 @@
 import streamlit as st
 from io import StringIO
 
-from string_transformer.personalized_string_class import PersonalizedStringClass
 from pos_tokenizer.pos_tokenizer import pos_tokenizer
+from style.style import set_style
+from components.write_text import write_text
+from set_indexes import set_indexes
+
+set_style()
 
 st.title("Buscador de sustantivos")
 
@@ -22,19 +26,10 @@ if uploaded_file is not None:
 
     # To read file as string:
     string_data = stringio.read()
+    indexes = set_indexes(string_data.split("\n\n"))
     st.write(string_data)
 
     with st.spinner('Buscando los sustantivos 😎'):
-        test = pos_tokenizer(PersonalizedStringClass("Son 3 las muertes. conocidas en el día de hoy")
-                             .text)
-        st.markdown("<style>strong {font-size: 20px;}</style>", unsafe_allow_html=True)
-        html_result = "<p>"
-        for word in test:
-            if word[1].startswith("nc"):
-                html_result += " <strong>" + word[0] + "</strong>"
-            elif word[1] == "Fp":
-                html_result += word[0]
-            else:
-                html_result += " " + word[0]
-        html_result += "</p>"
-        st.markdown(html_result, unsafe_allow_html=True)
+        text = pos_tokenizer("Son 3 las muertes. conocidas en el día de hoy")
+
+        write_text(text)

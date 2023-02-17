@@ -5,7 +5,6 @@ from nltk import tag
 
 nltk.download('punkt')
 nltk.download('cess_esp')
-nltk.download('averaged_perceptron_tagger')
 
 
 def pos_tokenizer(text):
