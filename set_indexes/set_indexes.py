@@ -8,7 +8,7 @@ nltk.download('punkt')
 def set_indexes(text_file):
     structure = {}
     key, texto = "", ""
-    st.write(len(text_file))
+    st.write(text_file)
     if len(text_file) == 6:
         for index in range(len(text_file)):
             if index % 2 == 0:
