@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def write_text(text):
     html_result = "<p>"
     for word in text:
