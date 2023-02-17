@@ -27,10 +27,16 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     indexes = set_indexes(string_data.split("\r\n\r"))
-    st.write(indexes["noticia"])
+    with st.spinner('Buscando los sustantivos 😎'):
+        title_text = pos_tokenizer(indexes["titulo"])
+        news_text = pos_tokenizer(indexes["noticia"])
+        summary_text = pos_tokenizer(indexes["resumen"])
+
 
     with st.spinner('Buscando los sustantivos 😎'):
         if title:
-            text = pos_tokenizer(indexes["resumen"])
-            st.write(text)
-            write_text(text)
+            write_text(title_text)
+        if news:
+            write_text(news_text)
+        if summary:
+            write_text(summary_text)
