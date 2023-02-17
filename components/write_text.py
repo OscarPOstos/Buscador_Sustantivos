@@ -4,9 +4,9 @@ import streamlit as st
 def write_text(text):
     html_result = "<p>"
     for word in text:
-        if word[1].startswith("nc"):
+        if word[1] == "NOUN":
             html_result += " <strong>" + word[0] + "</strong>"
-        elif word[1] == "Fp":
+        elif word[1] == "PUNTC":
             html_result += word[0]
         else:
             html_result += " " + word[0]
