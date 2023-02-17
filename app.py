@@ -29,16 +29,19 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     indexes = set_indexes(string_data.split("\r\n\r"))
-    with st.spinner('Buscando los sustantivos 😎'):
-        title_text = pos_tokenizer(indexes["titulo"])
-        news_text = pos_tokenizer(indexes["noticia"])
-        summary_text = pos_tokenizer(indexes["resumen"])
-    if title:
-        st.write("Titulo")
-        write_text(title_text)
-    if news:
-        st.write("Noticia")
-        write_text(news_text)
-    if summary:
-        st.write("Resumen")
-        write_text(summary_text)
+    try:
+        with st.spinner('Buscando los sustantivos 😎'):
+            title_text = pos_tokenizer(indexes["titulo"])
+            news_text = pos_tokenizer(indexes["noticia"])
+            summary_text = pos_tokenizer(indexes["resumen"])
+        if title:
+            st.write("Titulo")
+            write_text(title_text)
+        if news:
+            st.write("Noticia")
+            write_text(news_text)
+        if summary:
+            st.write("Resumen")
+            write_text(summary_text)
+    except KeyError:
+        st.title("Lo sentimos pero el archivo no cumple la estructura permitida :(")
