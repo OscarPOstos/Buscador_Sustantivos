@@ -27,7 +27,7 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     indexes = set_indexes(string_data.split("\r\n\r"))
-    st.write(indexes)
+    st.write(indexes["noticia"])
 
     with st.spinner('Buscando los sustantivos 😎'):
         if title:
