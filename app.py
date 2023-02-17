@@ -27,7 +27,7 @@ if uploaded_file is not None:
     # To read file as string:
     string_data = stringio.read()
     indexes = set_indexes(string_data.split("\r\n\r"))
-    st.write(string_data)
+    st.write(indexes)
 
     with st.spinner('Buscando los sustantivos 😎'):
         text = pos_tokenizer("Son 3 las muertes. conocidas en el día de hoy")
