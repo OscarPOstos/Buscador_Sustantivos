@@ -26,7 +26,7 @@ if uploaded_file is not None:
 
     # To read file as string:
     string_data = stringio.read()
-    indexes = set_indexes(stringio.split("\n\n"))
+    indexes = set_indexes(uploaded_file.getvalue().split("\n\n"))
     st.write(indexes)
 
     with st.spinner('Buscando los sustantivos 😎'):
