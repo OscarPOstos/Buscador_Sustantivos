@@ -35,8 +35,11 @@ if uploaded_file is not None:
 
     with st.spinner('Buscando los sustantivos 😎'):
         if title:
+            st.write("Titulo")
             write_text(title_text)
         if news:
+            st.write("Noticia")
             write_text(news_text)
         if summary:
+            st.write("Resumen")
             write_text(summary_text)
