@@ -30,7 +30,7 @@ if uploaded_file is not None:
         html_result = "<p>"
         for word in test:
             if word[1].startswith("nc"):
-                html_result += " <b>" + word[0] + "</b>"
+                html_result += " <strong>" + word[0] + "</strong>"
             elif word[1] == "Fp":
                 html_result += word[0]
             else:
