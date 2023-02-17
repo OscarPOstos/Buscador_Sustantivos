@@ -33,9 +33,3 @@ if uploaded_file is not None:
         if title:
             text = pos_tokenizer(indexes["titulo"])
             write_text(text)
-        if news:
-            text = pos_tokenizer(indexes["noticia"])
-            write_text(text)
-        if summary:
-            text = pos_tokenizer(indexes["resumen"])
-            write_text(text)
