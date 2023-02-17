@@ -1,5 +1,6 @@
 import streamlit as st
 from io import StringIO
+from PIL import Image
 
 from pos_tokenizer.pos_tokenizer import pos_tokenizer
 from style.style import set_style
@@ -44,3 +45,6 @@ if uploaded_file is not None:
             write_text(summary_text)
     except KeyError:
         st.title("Lo sentimos pero el archivo no cumple la estructura permitida :(")
+        st.write("Debe tener una estructura parecida a esta")
+        image = Image.open('images/estructura.png')
+        st.image(image)
