@@ -5,6 +5,11 @@ nltk.download('punkt')
 
 
 def set_indexes(text_file):
+    """
+    Saca las secciones de un texto y los convierte en un diccionario que contiene las secciones
+    :param text_file: El texto contenido de un documento
+    :return: Devuelve un diccionario con las secciones titulo, noticia y resumen
+    """
     structure = {}
     key, texto = "", ""
     if len(text_file) == 6:
