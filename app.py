@@ -7,9 +7,8 @@ from style.style import set_style
 from components.write_text import write_text
 from set_indexes.set_indexes import set_indexes
 
-"""
-Aqui se irá construyendo la interfaz de la aplicación y añadiendo sus funcionalidades
-"""
+
+# Aqui se irá construyendo la interfaz de la aplicación y añadiendo sus funcionalidades
 
 set_style()
 
